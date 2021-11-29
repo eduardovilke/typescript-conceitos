@@ -138,3 +138,42 @@ const john = new UserAccount("John");
 console.log(john.name) // WORK
 john.name = "John Doe" // DON'T WORK
 ```
+### Accessors
+
+1. GET
+```ts
+class UserAccount {
+  name: string;
+
+  constructor(name: string){
+    this.name = name;
+  }
+
+  get getName(){
+    console.log(" ----- GET -----");
+    return this.name;
+  }
+}
+
+const john = new UserAccount("John");
+john.getName();
+```
+
+2. SET
+```ts
+class UserAccount {
+  name: string;
+
+  constructor(name: string){
+    this.name = name;
+  }
+
+  set setName(name: string){
+    console.log(" ----- SET -----");
+    this.name = name;
+  }
+}
+
+const john = new UserAccount("John");
+john.setName = "John Doe";
+```
